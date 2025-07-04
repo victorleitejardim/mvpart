@@ -17,12 +17,12 @@ void free_tree(struct node *node,  int freenode)
     for (s1=node->surrogate; s1!=0; ){
     s2 = s1;
     s1 = s1->nextsplit;
-    Free(s2);
+    free(s2);
     }
     for (s1=node->primary; s1!=0; ){
     s2 = s1;
     s1 = s1->nextsplit;
-    Free(s2);
+    free(s2);
     }
-    if (freenode==1) Free(node);
+    if (freenode==1) free(node);
     }
