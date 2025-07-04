@@ -144,6 +144,6 @@ void xval(int n_xval,  struct cptable *cptable_head,  int *x_grp,
     }
     rp.alpha=alphasave;
     for (i=0; i<rp.n; i++) rp.which[i] = savew[i];
-    Free(savew);
-    Free(xtemp);
+    free(savew);
+    free(xtemp);
     }

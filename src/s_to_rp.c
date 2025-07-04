@@ -129,9 +129,9 @@ void s_to_rp2(int *n,         int *nsplit,    int *nnode,     int *ncat,
     free_tree(tree, 0);
     for (cp=cptab.forward; cp!=0; ) {
     cp2 = cp->forward;
-    Free(cp);
+    free(cp);
     cp = cp2;
     }
-    Free(ccsplit);
-    Free(savewhich);
+    free(ccsplit);
+    free(savewhich);
     }
