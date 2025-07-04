@@ -34,8 +34,8 @@ EXTERN struct {
     double *lwt;
     double *rwt;            /*scratch double vectors, of length ncat */
     double *vcost;          /* variable costs */
-    Sint   *numcat;        /* variable type: 0=cont, 1+  =#categories */
-    Sint   **sorts;             /* allocated on the fly */
+    int   *numcat;        /* variable type: 0=cont, 1+  =#categories */
+    int   **sorts;             /* allocated on the fly */
     int    n;              /* total number of subjects  */
     int    num_y;          /* number of y variables */
     int    nvar;           /* number of predictors */
