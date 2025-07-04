@@ -9,11 +9,11 @@
 #include "rpartS.h"
 #include "rpartproto.h"
 
-void s_xpred(Sint *sn,     Sint *nvarx,   Sint *ncat,    Sint *method, 
-         double *opt,  double *parms, Sint *xvals,   Sint *x_grp,
-         double *ymat, FLOAT *xmat,   Sint *missmat, double *predict,
-         Sint *ncp,    double *cp,    char **error,  double *wt,
-         Sint *ny,     double *cost)
+void s_xpred(int *sn,     int *nvarx,   int *ncat,    int *method, 
+         double *opt,  double *parms, int *xvals,   int *x_grp,
+         double *ymat, FLOAT *xmat,   int *missmat, double *predict,
+         int *ncp,    double *cp,    char **error,  double *wt,
+         int *ny,     double *cost)
     {
     int i,j,k;
     int maxcat;
@@ -94,7 +94,7 @@ void s_xpred(Sint *sn,     Sint *nvarx,   Sint *ncat,    Sint *method,
     **   of the 'missmat' array.
     ** I don't have to sort the categoricals.
     */
-    rp.sorts  = (Sint**) ALLOC(nvar, sizeof(Sint *));
+    rp.sorts  = (int**) ALLOC(nvar, sizeof(int *));
     maxcat=0;
     for (i=0; i<nvar; i++) {
     rp.sorts[i] = &(missmat[i*n]); 

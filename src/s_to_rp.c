@@ -12,10 +12,10 @@ static struct cptable cptab;
 static struct node *tree;
 static int *savewhich;
 
-void s_to_rp(Sint *n,     Sint *nvarx,   Sint *ncat,    Sint *method, 
-         double *opt, double *parms, Sint *xvals,   Sint *x_grp,
-         double *y,   FLOAT *xmat,   Sint *dissim, Sint *missmat, char **error,
-         double *wt,  Sint  *ny,     double *cost)
+void s_to_rp(int *n,     int *nvarx,   int *ncat,    int *method, 
+         double *opt, double *parms, int *xvals,   int *x_grp,
+         double *y,   FLOAT *xmat,   int *dissim, int *missmat, char **error,
+         double *wt,  int  *ny,     double *cost)
     {
     int itemp;
     int maxpri;
@@ -46,17 +46,17 @@ void s_to_rp(Sint *n,     Sint *nvarx,   Sint *ncat,    Sint *method,
 **   (the list heads are static).  S then calls again with appropriately
 **   sized arrays to this routine. This stuffs the arrays and frees the memory
 */
-void s_to_rp2(Sint *n,         Sint *nsplit,    Sint *nnode,     Sint *ncat, 
-          Sint *numcat,    Sint *maxcat,    Sint *xvals,     Sint *which, 
-          double *cptable, double *dsplit,  Sint *isplit,    Sint *csplit,
-          double *dnode,   Sint *inode)
+void s_to_rp2(int *n,         int *nsplit,    int *nnode,     int *ncat, 
+          int *numcat,    int *maxcat,    int *xvals,     int *which, 
+          double *cptable, double *dsplit,  int *isplit,    int *csplit,
+          double *dnode,   int *inode)
     {
     int i;
     int  nodenum, j;
     struct cptable *cp, *cp2;
     double **ddnode  , *ddsplit[3];
-    Sint   *iinode[6], *iisplit[3];
-    Sint   **ccsplit;
+    int   *iinode[6], *iisplit[3];
+    int   **ccsplit;
     double scale;
  
     /*
@@ -82,7 +82,7 @@ void s_to_rp2(Sint *n,         Sint *nsplit,    Sint *nnode,     Sint *ncat,
     **  4 extra bytes is any big deal....
     */
     if (*maxcat==0) i=1; else i = *maxcat;
-    ccsplit = (Sint **)CALLOC(i, sizeof(Sint *));
+    ccsplit = (int **)CALLOC(i, sizeof(int *));
     for (i=0; i<*maxcat; i++) {
     ccsplit[i] = csplit;   csplit += *ncat;
     }

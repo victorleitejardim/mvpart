@@ -7,7 +7,7 @@
 #ifdef WIN32
 #include <ctype.h>
 #endif
-void formatg( Sint *n, double *x, char **format, char **out) 
+void formatg( int *n, double *x, char **format, char **out) 
 {
     int i;
 #ifdef WIN32

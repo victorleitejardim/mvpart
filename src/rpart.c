@@ -43,11 +43,11 @@
 #include "rpartS.h"
 #include "rpartproto.h"
 
-int rpart(int n,         int nvarx,      Sint *ncat,     int method, 
+int rpart(int n,         int nvarx,      int *ncat,     int method, 
           int  maxpri,   double *parms,  double *ymat,   FLOAT *xmat,
-          int  dissim,   Sint *missmat, struct cptable *cptable,
+          int  dissim,   int *missmat, struct cptable *cptable,
           struct node **tree,            char **error,   int *which,
-          int xvals,     Sint *x_grp,    double *wt,     double *opt,
+          int xvals,     int *x_grp,    double *wt,     double *opt,
           int ny,        double *cost) 
           {
     int i,k,nny;
@@ -126,7 +126,7 @@ int rpart(int n,         int nvarx,      Sint *ncat,     int method,
     **   of the 'missmat' array.
     ** I don't have to sort the categoricals.
     */
-    rp.sorts  = (Sint**) ALLOC(nvarx, sizeof(Sint *));
+    rp.sorts  = (int**) ALLOC(nvarx, sizeof(int *));
     maxcat=0;
     for (i=0; i<nvarx; i++) {
     rp.sorts[i] = &(missmat[i*n]);

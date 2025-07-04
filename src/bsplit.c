@@ -21,7 +21,7 @@ void bsplit(struct node *me, int nodenum)
     double improve;
     FLOAT split;
     struct split *tsplit;
-    Sint *index;
+    int *index;
     int  *which;
     FLOAT *xtemp;  /*these 3 because I got tired of typeing "rp.xtemp", etc*/
     double **ytemp;

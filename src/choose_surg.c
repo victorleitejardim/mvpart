@@ -12,7 +12,7 @@
 #include "rpart.h"
 #include "rpartproto.h"
 
-void choose_surg(int nodenum,    int *y,         FLOAT *x,     Sint *order, 
+void choose_surg(int nodenum,    int *y,         FLOAT *x,     int *order, 
          int ncat,    double *agreement, FLOAT *split, int *csplit,
          double tleft,double tright,     double *adj)
     {
